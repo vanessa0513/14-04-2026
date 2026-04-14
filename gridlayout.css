@@ -1,0 +1,73 @@
+/* Mobile */
+.container{
+    display: grid;
+    grid-template-areas: "Header"
+                         "Navbar"
+                         "content"
+                         "ads"
+                         "footer";
+                         grid-template-rows: auto auto 1fr auto auto;
+                         min-height: 100vh;
+}
+/* Tab */
+@media screen  and (min-width: 768px){
+    .container{
+        grid-template-areas: "Header Header"
+                             "Navbar content"
+                             "ads ads"
+                             "footer footer";
+                             grid-template-rows: auto 1fr auto auto;
+                             grid-template-columns: 200px 1fr;
+    }
+}
+/* Desktop */
+@media screen and (min-width: 1024px){
+    .container{
+       grid-template-areas: "Header Header Header"
+                            "Navbar content ads"
+                            "footer footer footer";
+                            grid-template-rows: auto 1fr auto;
+                            grid-template-columns: 200px 1fr 200px;
+    }
+}    
+header{
+    grid-area: Header;
+    background-color: rgb(241, 141, 141);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: auto;
+    scroll-snap-type: mandatory;
+  
+}
+
+nav{
+    grid-area: Navbar;
+    background-color: rgb(212, 109, 109);
+    color: white;
+    padding: auto;
+    text-align: center;
+    border-radius: 10px;
+    scroll-behavior: auto;
+}
+.content{
+    grid-area: content;
+    background-color: rgb(232, 186, 122);
+    border: 2px;
+    text-align: center;
+    padding: auto;
+}
+.ads{
+    grid-area: ads;
+    background-color: rgb(236, 174, 152);
+    border: 2px;
+    text-align: center;
+    padding: auto;
+}
+footer{
+    grid-area: footer;
+    background-color: rgb(212, 115, 59);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
